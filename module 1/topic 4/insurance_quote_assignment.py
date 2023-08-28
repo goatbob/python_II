@@ -2,6 +2,9 @@
 program: insurance_quote_assignment.py
 author: kyle godwin
 last date modified: 27 august 2023
+
+Program to determine insurance coverage cost for
+a customer based on user input.
 """
 
 
@@ -55,7 +58,10 @@ def ins_rate_calc(age, coverage):
 
 if __name__ == "__main__":
     n = input("Enter name: ")
-    a = input("Enter age: ")
+    try:
+        a = int(input("Enter age: "))
+    except ValueError:
+        print("Invalid input. Please enter a valid age.")
     c = input("Enter coverage level (state minimum, liability, full): ")\
 
     cust = {"Name": n, "Age": a, "Coverage": c}
@@ -70,5 +76,5 @@ if __name__ == "__main__":
     disc = input("Would you like to pay now for a 10% discount (y/n): ")
     if acc == "y":
         cust["Coverage Cost"] = cust["Coverage Cost"] * 0.90
-    
+
     print(f"${cust['Coverage Cost']:.2f}")
