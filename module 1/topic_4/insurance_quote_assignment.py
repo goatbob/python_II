@@ -62,7 +62,7 @@ if __name__ == "__main__":
         a = int(input("Enter age: "))
     except ValueError:
         print("Invalid input. Please enter a valid age.")
-    c = input("Enter coverage level (state minimum, liability, full): ")\
+    c = input("Enter coverage level (state minimum, liability, full): ")
 
     cust = {"Name": n, "Age": a, "Coverage": c}
 
